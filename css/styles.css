@@ -1,0 +1,308 @@
+/* Variables de Couleurs */
+:root {
+    --green: #2e8b57;
+    --blue: #1e90ff;
+    --light-gray: #f4f4f4;
+    --dark-gray: #333;
+    --white: #ffffff;
+}
+
+/* Styles Globaux */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-gray);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 0;
+}
+
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* En-tête */
+header {
+    background: var(--white);
+    border-bottom: 1px solid var(--light-gray);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    color: var(--green);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--dark-gray);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--green);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Bannière */
+.hero {
+    background-image: url('../assets/lamotte_maisons_individuelles_conseil_etapes_chantier_construction.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.hero h2,
+.hero p,
+.hero .btn {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+    background: var(--green);
+    color: var(--white);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--dark-gray);
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+}
+
+.about, .membership {
+    background: var(--light-gray);
+    text-align: center;
+}
+
+.projects, .services, .partners, .news, .contact {
+    text-align: center;
+}
+
+.project-grid, .services-grid, .partners-grid, .news-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project-item, .service-item, .partner-item, .news-item {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex: 1 1 300px;
+    max-width: 300px;
+}
+
+.project-item img, .news-item img, .partner-item img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.service-item i {
+    font-size: 2rem;
+    color: var(--green);
+    margin-bottom: 10px;
+}
+
+.read-more {
+    text-decoration: none;
+    color: var(--blue);
+    font-weight: 600;
+}
+
+.read-more:hover {
+    color: var(--green);
+}
+
+/* Formulaire de Contact */
+.contact form {
+    max-width: 600px;
+    margin: auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+}
+
+.contact .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+/* Pied de page */
+footer {
+    background: var(--dark-gray);
+    color: var(--white);
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .social-links a {
+    color: var(--white);
+    margin: 0 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: var(--green);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: var(--white);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        border: 1px solid var(--light-gray);
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .project-grid, .services-grid, .partners-grid, .news-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+}
